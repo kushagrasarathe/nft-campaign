@@ -5,11 +5,21 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, base, zora } from "wagmi/chains";
+import { configureChains, createConfig, sepolia, WagmiConfig } from "wagmi";
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  base,
+  zora,
+  goerli,
+  polygonMumbai,
+} from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import Navbar from "@/src/components/navbar";
+import { Toaster } from "react-hot-toast";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +29,7 @@ import Navbar from "@/src/components/navbar";
 // };
 
 const { chains, publicClient } = configureChains(
-  [mainnet, polygon, optimism, arbitrum, base, zora],
+  [goerli, sepolia, polygonMumbai],
   [
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API as string }),
     publicProvider(),
@@ -50,6 +60,7 @@ export default function RootLayout({
           <RainbowKitProvider chains={chains}>
             <Navbar />
             <div>{children}</div>
+            <Toaster reverseOrder position="bottom-center" />
           </RainbowKitProvider>
         </WagmiConfig>
       </body>
