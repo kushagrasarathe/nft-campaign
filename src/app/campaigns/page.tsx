@@ -30,7 +30,7 @@ export default function ActiveCampaigns() {
   }, []);
 
   return (
-    <div className=" p-12 px-20 flex flex-col items-center justify-normal ">
+    <div className="  p-12 px-20 flex flex-col items-center justify-normal ">
       <div className=" w-full items-center flex justify-between laptop:px-2 desktop:px-20  ">
         <h1>Active Campaigns</h1>
         <Modal
