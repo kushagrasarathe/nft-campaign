@@ -2,11 +2,14 @@
 
 import { Loading } from "@/src/components/create-campaign";
 import { Button } from "@/src/components/ui/button";
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/src/lib/constants";
 import { collectionRef, db } from "@/src/lib/firebase-confirg";
 import { collection, doc, getDoc, onSnapshot } from "@firebase/firestore";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useAccount, useContractWrite } from "wagmi";
 
 export default function Claim() {
   const { slug } = useParams();
@@ -14,6 +17,18 @@ export default function Claim() {
   const [data, setData] = useState<Metadata[] | any>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [campaignDocExists, setCampaignDocExists] = useState<boolean>(true);
+  const { address, isConnected } = useAccount();
+  const {
+    data: contractData,
+    isLoading,
+    isSuccess,
+    write,
+  } = useContractWrite({
+    address: CONTRACT_ADDRESS,
+    abi: CONTRACT_ABI,
+    functionName: "safeMint",
+    args: [address, `ipfs://${slug}`],
+  });
   // console.log(campaignID.slug);
   // console.log(slug);
 
@@ -74,7 +89,12 @@ export default function Claim() {
             <p className=" max-w-2xl text-start text-lg tracking-wide">
               {data && data.description}
             </p>
-            <Button className=" font-[600] tracking-wide">Mint NFT</Button>
+            <Button
+              onClick={() => isConnected ?  write() : toast.error("Connect your wallet please")}
+              className=" font-[600] tracking-wide"
+            >
+              Mint NFT
+            </Button>
           </div>
         </div>
       )}
