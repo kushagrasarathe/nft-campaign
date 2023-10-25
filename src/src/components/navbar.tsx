@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function Navbar() {
   return (
-    <div className=" flex items-center justify-between w-full py-3 px-20 border-b bg-white">
+    <div className=" flex items-center justify-between w-full py-3 desktop:px-36 laptop:px-20 border-b bg-white">
       <Link href={"/"} className=" text-base font-semibold">
         NFT Campign
       </Link>
