@@ -13,9 +13,9 @@ export default function CampaignCard({
       <CardHeader>{title && title}</CardHeader>
       <CardContent className=" border-0">
         {imageUrl && (
-          <img
-            width={100}
-            height={100}
+          <Image
+            width={1000}
+            height={1000}
             className=" max-h-[200px] h-[200px] w-full object-cover "
             src={imageUrl && imageUrl}
             alt="campaign image"

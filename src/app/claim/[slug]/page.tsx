@@ -76,7 +76,9 @@ export default function Claim() {
       {data && (
         <div className="  grid grid-cols-12 gap-8  w-full items-stretch  justify-between px-12 laptop:py-12 laptop:px-20 desktop:px-36 desktop:py-12  ">
           <div className=" tablet:col-span-12  laptop:col-span-6 desktop:col-span-6 tablet:items-center tablet:justify-center  col-span-12">
-            <img
+            <Image
+              width={10000}
+              height={10000}
               src={data && data.imageUrl}
               className=" max-w-md mx-auto tablet:max-w-xl tablet:mx-auto laptop:mr-auto laptop:max-w-xl desktop:max-w-3xl "
               alt="campaign image"
