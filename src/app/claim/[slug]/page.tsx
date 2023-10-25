@@ -59,11 +59,11 @@ export default function Claim() {
   return (
     <div className="min-h-[92vh] flex items-center justify-center">
       {data && (
-        <div className="  grid grid-cols-12 gap-8  w-full items-stretch  justify-between laptop:py-12 laptop:p-2 desktop:px-36 desktop:py-12  ">
+        <div className="  grid grid-cols-12 gap-8  w-full items-stretch  justify-between laptop:py-12 laptop:px-20 desktop:px-36 desktop:py-12  ">
           <div className=" col-span-6">
             <img
               src={data && data.imageUrl}
-              className=" max-w-3xl"
+              className=" laptop:max-w-xl desktop:max-w-3xl "
               alt="campaign image"
             />
           </div>
