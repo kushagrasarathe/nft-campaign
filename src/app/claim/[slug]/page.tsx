@@ -74,15 +74,15 @@ export default function Claim() {
   return (
     <div className="min-h-[92vh] flex items-center justify-center">
       {data && (
-        <div className="  grid grid-cols-12 gap-8  w-full items-stretch  justify-between laptop:py-12 laptop:px-20 desktop:px-36 desktop:py-12  ">
-          <div className=" col-span-6">
+        <div className="  grid grid-cols-12 gap-8  w-full items-stretch  justify-between px-12 laptop:py-12 laptop:px-20 desktop:px-36 desktop:py-12  ">
+          <div className=" tablet:col-span-12  laptop:col-span-6 desktop:col-span-6 tablet:items-center tablet:justify-center  col-span-12">
             <img
               src={data && data.imageUrl}
-              className=" laptop:max-w-xl desktop:max-w-3xl "
+              className=" max-w-md mx-auto tablet:max-w-xl tablet:mx-auto laptop:mr-auto laptop:max-w-xl desktop:max-w-3xl "
               alt="campaign image"
             />
           </div>
-          <div className=" col-span-6 flex flex-col items-start gap-y-4  justify-start">
+          <div className=" col-span-12 tablet:col-span-12 laptop:col-span-6 desktop:col-span-6  tablet:items-center tablet:justify-center flex flex-col items-start gap-y-4  justify-start">
             <h1 className=" text-4xl font-[700] tracking-wider">
               {data && data.title}
             </h1>
@@ -90,7 +90,11 @@ export default function Claim() {
               {data && data.description}
             </p>
             <Button
-              onClick={() => isConnected ?  write() : toast.error("Connect your wallet please")}
+              onClick={() =>
+                isConnected
+                  ? write()
+                  : toast.error("Connect your wallet please")
+              }
               className=" font-[600] tracking-wide"
             >
               Mint NFT

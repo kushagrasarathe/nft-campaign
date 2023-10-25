@@ -59,7 +59,7 @@ export default function RootLayout({
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
             <Navbar />
-            <div>{children}</div>
+            <div className=" pt-16">{children}</div>
             <Toaster reverseOrder position="bottom-center" />
           </RainbowKitProvider>
         </WagmiConfig>
