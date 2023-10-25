@@ -1,9 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NFT Campaign is built using Next.JS, TypeScript, TailwindCSS and ShadcnUI.
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally follow these steps:
 
+1. Clone the git repository directly through VS Code or simply run the following command in your terminal `git clone https://github.com/kushagrasarathe/nft-campaign.git`
+2. Now open the cloned repository in VS Code or any other code editor of your choice.
+3. Next rename the `.env.local.example` to `.env.local` and paste the required environment variables.
+> **NOTE** The pooject uses Firebase for saving the campaigns that are created by users.
+4. Run either of the following command in terminal to install all the dependencies:
 ```bash
 npm run dev
 # or
@@ -13,24 +18,15 @@ pnpm dev
 # or
 bun dev
 ```
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to interact with the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployed link
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project is deployed on vercel and can be accessed by simply visiting  [Website](https://coinvise-task.vercel.app/).
 
-## Learn More
+## Contract
 
-To learn more about Next.js, take a look at the following resources:
+The `contracts` directory has the `OpenEdition` smart-contract written in solidity. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The contract is deployed on the following address `0xF34999a7f6068cAdD8F63B66963EfB2485022029` on *Seploia* Testnet.
